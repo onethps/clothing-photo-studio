@@ -6,15 +6,6 @@
 
 ---
 
-## ⚡️ Before & After
-
-| Original Photo (Untouched) | Studio Converted (Listing Ready) |
-| :---: | :---: |
-| ![Original Photo](docs/images/before.jpg) | ![Studio Converted](docs/images/after.jpg) |
-| *Temporary creases, crumpled folds, and muted floor lighting* | *Steamed flat, vibrant floor contrast, and crisp fabric highlights* |
-
----
-
 ## ✨ Key Features
 
 - **💨 Wrinkle-Free Steaming**: Substantially eliminates temporary fold lines, bunching, and crumpled creases as if the garment were professionally steamed and laid flat.
