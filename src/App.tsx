@@ -22,9 +22,12 @@ const paths: Record<IconName, string> = {
   image:
     "M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m-2 14 6-6 4 4 3-3 5 5M8 7h.01",
   close: "m6 6 12 12M6 18 18 6",
-  refresh: "M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4m-4 4a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4",
-  compare: "M8 7h8m-8 5h8m-8 5h8M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z",
-  split: "M9 3v18M15 3v18M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z",
+  refresh:
+    "M20 11A8.1 8.1 0 0 0 4.5 9M4 5v4h4m-4 4a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4",
+  compare:
+    "M8 7h8m-8 5h8m-8 5h8M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z",
+  split:
+    "M9 3v18M15 3v18M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z",
 };
 
 function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
@@ -142,7 +145,11 @@ export default function App() {
       };
       img.onerror = () => {
         URL.revokeObjectURL(url);
-        reject(new Error("This photo cannot be opened. Try exporting it as JPEG again."));
+        reject(
+          new Error(
+            "This photo cannot be opened. Try exporting it as JPEG again.",
+          ),
+        );
       };
       img.src = url;
     });
@@ -162,7 +169,11 @@ export default function App() {
     const width = img.naturalWidth || img.width;
     const height = img.naturalHeight || img.height;
 
-    if (fileToUpload.size <= MAX_UPLOAD_BYTES && width <= MAX_DIMENSION && height <= MAX_DIMENSION) {
+    if (
+      fileToUpload.size <= MAX_UPLOAD_BYTES &&
+      width <= MAX_DIMENSION &&
+      height <= MAX_DIMENSION
+    ) {
       return fileToUpload;
     }
 
@@ -170,10 +181,16 @@ export default function App() {
     let targetHeight = height;
     if (targetWidth > MAX_DIMENSION || targetHeight > MAX_DIMENSION) {
       if (targetWidth >= targetHeight) {
-        targetHeight = Math.max(1, Math.round((targetHeight * MAX_DIMENSION) / targetWidth));
+        targetHeight = Math.max(
+          1,
+          Math.round((targetHeight * MAX_DIMENSION) / targetWidth),
+        );
         targetWidth = MAX_DIMENSION;
       } else {
-        targetWidth = Math.max(1, Math.round((targetWidth * MAX_DIMENSION) / targetHeight));
+        targetWidth = Math.max(
+          1,
+          Math.round((targetWidth * MAX_DIMENSION) / targetHeight),
+        );
         targetHeight = MAX_DIMENSION;
       }
     }
@@ -377,7 +394,9 @@ export default function App() {
           </a>
 
           <div className="header-actions">
-            <span className={`status-pill ${connected ? "online" : connected === false ? "offline" : ""}`}>
+            <span
+              className={`status-pill ${connected ? "online" : connected === false ? "offline" : ""}`}
+            >
               <span className="status-dot" />
               {connected === null
                 ? "Connecting..."
@@ -411,7 +430,8 @@ export default function App() {
           </div>
           <h1 className="hero-title">Your clothes, ready for listing.</h1>
           <p className="hero-subtitle">
-            Flattens creases, boosts natural wood floor contrast, and cleans distracting edges.
+            Flattens creases, boosts natural wood floor contrast, and cleans
+            distracting edges.
           </p>
         </section>
 
@@ -420,7 +440,11 @@ export default function App() {
           <div className="error-toast" role="alert">
             <span className="error-icon">!</span>
             <span>{error}</span>
-            <button className="error-dismiss" onClick={() => setError("")} aria-label="Dismiss error">
+            <button
+              className="error-dismiss"
+              onClick={() => setError("")}
+              aria-label="Dismiss error"
+            >
               <Icon name="close" size={14} />
             </button>
           </div>
@@ -473,7 +497,8 @@ export default function App() {
                 </div>
                 <h2>Drop your clothing photo here</h2>
                 <p className="dropzone-hint">
-                  or <span className="browse-link">browse files</span> from your device
+                  or <span className="browse-link">browse files</span> from your
+                  device
                 </p>
                 <div className="dropzone-meta">
                   <span>JPEG, PNG, WebP up to 20 MB</span>
@@ -510,8 +535,12 @@ export default function App() {
                   ) : file ? (
                     <span className="file-pill">
                       <Icon name="image" size={14} />
-                      <span className="file-name" title={file.name}>{file.name}</span>
-                      <span className="file-size">({(file.size / (1024 * 1024)).toFixed(1)} MB)</span>
+                      <span className="file-name" title={file.name}>
+                        {file.name}
+                      </span>
+                      <span className="file-size">
+                        ({(file.size / (1024 * 1024)).toFixed(1)} MB)
+                      </span>
                     </span>
                   ) : null}
                 </div>
@@ -598,7 +627,9 @@ export default function App() {
 
                       {/* Floating Badges */}
                       <span className="badge-tag tag-left">ORIGINAL</span>
-                      <span className="badge-tag tag-right">STUDIO CONVERTED</span>
+                      <span className="badge-tag tag-right">
+                        STUDIO CONVERTED
+                      </span>
                     </div>
                   ) : (
                     /* Side-by-Side Split View */
@@ -609,7 +640,10 @@ export default function App() {
                           <span>Original Photo</span>
                         </figcaption>
                         <div className="split-frame">
-                          <img src={activeBefore} alt="Original clothing photo" />
+                          <img
+                            src={activeBefore}
+                            alt="Original clothing photo"
+                          />
                         </div>
                       </figure>
                       <figure className="split-card highlight">
@@ -618,7 +652,10 @@ export default function App() {
                           <span>Studio Converted</span>
                         </figcaption>
                         <div className="split-frame">
-                          <img src={activeAfter} alt="Studio converted listing photo" />
+                          <img
+                            src={activeAfter}
+                            alt="Studio converted listing photo"
+                          />
                         </div>
                       </figure>
                     </div>
@@ -634,7 +671,10 @@ export default function App() {
                         <div className="pulsing-halo" />
                         <span className="studio-spinner" />
                         <h3>Converting your photo</h3>
-                        <p>Steaming creases, tuning rich wood contrast & cleaning borders…</p>
+                        <p>
+                          Steaming creases, tuning rich wood contrast & cleaning
+                          borders…
+                        </p>
                       </div>
                     )}
                   </div>
@@ -704,24 +744,37 @@ export default function App() {
         {/* Feature Highlights Footer */}
         <section className="features-ribbon">
           <div className="feature-item">
-            <span className="feature-icon"><Icon name="check" size={16} /></span>
+            <span className="feature-icon">
+              <Icon name="check" size={16} />
+            </span>
             <div>
               <strong>Wrinkle-Free Steam</strong>
-              <p>Eliminates temporary fold lines, creases, and crumpled fabric.</p>
+              <p>
+                Eliminates temporary fold lines, creases, and crumpled fabric.
+              </p>
             </div>
           </div>
           <div className="feature-item">
-            <span className="feature-icon"><Icon name="check" size={16} /></span>
+            <span className="feature-icon">
+              <Icon name="check" size={16} />
+            </span>
             <div>
               <strong>Rich Floor Contrast</strong>
-              <p>Preserves deep wood plank seams, grain depth, and natural tones.</p>
+              <p>
+                Preserves deep wood plank seams, grain depth, and natural tones.
+              </p>
             </div>
           </div>
           <div className="feature-item">
-            <span className="feature-icon"><Icon name="check" size={16} /></span>
+            <span className="feature-icon">
+              <Icon name="check" size={16} />
+            </span>
             <div>
               <strong>Zero Inventions</strong>
-              <p>Authentic logos, brand graphics, and true wear are 100% preserved.</p>
+              <p>
+                Authentic logos, brand graphics, and true wear are 100%
+                preserved.
+              </p>
             </div>
           </div>
         </section>
@@ -734,8 +787,9 @@ export default function App() {
               <strong>Connect Gemini API to start editing</strong>
             </div>
             <p>
-              Ensure <code>VITE_APP_GEMINI_API_KEY</code> is set in your <code>.env</code> file
-              and restart the dev server with <code>yarn dev</code>.
+              Ensure <code>VITE_APP_GEMINI_API_KEY</code> is set in your{" "}
+              <code>.env</code> file and restart the dev server with{" "}
+              <code>yarn dev</code>.
             </p>
             <button
               type="button"
@@ -751,7 +805,7 @@ export default function App() {
       {/* Footer */}
       <footer className="studio-footer">
         <span>Rewear Studio · Instant AI Clothing Photography</span>
-        <span>Built for sellers on OLX, Shafa & Vinted</span>
+        <span>Built for sellers on Ebay & Vinted</span>
       </footer>
     </div>
   );

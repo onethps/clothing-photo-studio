@@ -1,6 +1,6 @@
 # Rewear Studio — One-Click AI Clothing Photography
 
-> Transform flat-lay clothing photos into professional marketplace listings for OLX, Shafa & Vinted. Substantially flattens creases, boosts natural floor contrast, cleans edge clutter, and preserves 100% of authentic garment identity.
+> Transform flat-lay clothing photos into professional marketplace listings for Ebay & Vinted. Substantially flattens creases, boosts natural floor contrast, cleans edge clutter, and preserves 100% of authentic garment identity.
 
 ![Rewear Studio Interface](docs/images/studio-preview.png)
 
