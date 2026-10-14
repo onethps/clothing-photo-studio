@@ -1,0 +1,10 @@
+Built-in imagegen edit.
+Input: smoothing-input.png, cropped from the right-hand photo in the supplied screenshot.
+
+Use case: precise-object-edit
+Asset type: realistic second-hand clothing listing photograph
+Input image: Image 1 is the exact existing edited shirt photo and the sole source of garment identity.
+Primary request: Smooth the gray VANS T-shirt as if it had been carefully steamed and laid flat. Remove the distracting temporary wrinkles and sharp diagonal and horizontal creases across the torso and sleeves substantially. The torso should appear visibly smooth, with real heathered cotton knit texture and only subtle natural fabric contours at the seams; no remaining crumpled appearance.
+Preserve: the exact same shirt, its gray color, matte fabric grain, actual signs of wear, cut, proportions, neckline, sleeve lengths, hem stitching, small red sleeve tag, and the burgundy VANS wordmark with its original glyphs, long upper stroke, placement, size, and orientation. Keep the existing neck print as it appears; do not invent or sharpen unreadable letters.
+Keep the same overhead composition, complete garment outline, wooden floor grain and seams, even lighting, exposure, and natural contact shadows. Change only temporary fabric folds and their shadows. Do not move or redesign the print, alter garment construction, erase actual stains or damage, replace the background, add accessories, text, or watermark. No blurred, glossy, plastic, airbrushed, or CGI fabric.
+Output one standalone edited photo, not a before/after comparison or app screenshot.
