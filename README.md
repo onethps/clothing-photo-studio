@@ -60,7 +60,7 @@ cp .env.example .env
 Add your Gemini API key to `.env`:
 
 ```env
-VITE_APP_GEMINI_API_KEY=your_gemini_api_key_here
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 VITE_APP_IMAGE_MODEL=gemini-nano-banana-2.1
 VITE_APP_IMAGE_SIZE=2K
 ```

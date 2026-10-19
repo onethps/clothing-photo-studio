@@ -9,7 +9,7 @@ export const config = {
 
 export default function handler(req, res) {
   const app = createApp({
-    apiKey: process.env.VITE_APP_GEMINI_API_KEY || process.env.GEMINI_API_KEY,
+    apiKey: process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY,
     model:
       process.env.VITE_APP_IMAGE_MODEL ||
       process.env.GEMINI_IMAGE_MODEL ||

@@ -51,11 +51,7 @@ async function studio(t, options = {}) {
   return `http://127.0.0.1:${server.address().port}`;
 }
 
-function upload({
-  type = "image/png",
-  bytes = png,
-  mode = "natural",
-} = {}) {
+function upload({ type = "image/png", bytes = png, mode = "natural" } = {}) {
   const form = new FormData();
   form.set("image", new Blob([bytes], { type }), "photo.png");
   form.set("mode", mode);
@@ -72,7 +68,7 @@ test("setup exposes only connection state and blocks editing without a key", asy
     body: upload(),
   });
   assert.equal(edit.status, 503);
-  assert.match((await edit.json()).error, /VITE_APP_GEMINI_API_KEY/);
+  assert.match((await edit.json()).error, /VITE_GEMINI_API_KEY/);
 });
 
 test("valid edit preserves prompt constraints and returns Gemini image bytes for PNG export", async (t) => {
@@ -384,24 +380,33 @@ test("details-first mode explicitly keeps geometry and marks rather than arrangi
 
 test("natural mode smooths wrinkles and steams garment while preserving wear and branding", () => {
   const prompt = buildPrompt("natural");
-  assert.match(prompt, /Smooth the garment as if it had been carefully steamed/);
+  assert.match(
+    prompt,
+    /Smooth the garment as if it had been carefully steamed/,
+  );
   assert.match(prompt, /all signs of wear, damage, or stains/);
   assert.match(
     prompt,
     /Never invent garment features or reconstruct unreadable letters/,
   );
   assert.match(prompt, /Significantly brighten the background/);
-  assert.doesNotMatch(
-    prompt,
-    /finish reference|NEW realistic/,
-  );
+  assert.doesNotMatch(prompt, /finish reference|NEW realistic/);
 });
 
 test("prompt enhances bright punchy contrast while locking authentic background texture", () => {
   const prompt = buildPrompt("natural");
-  assert.match(prompt, /Boost background contrast with rich, punchy tonal depth/);
-  assert.match(prompt, /Do NOT replace, redraw, or synthesize a new background texture/);
-  assert.match(prompt, /Retain the exact existing background surface material and texture/);
+  assert.match(
+    prompt,
+    /Boost background contrast with rich, punchy tonal depth/,
+  );
+  assert.match(
+    prompt,
+    /Do NOT replace, redraw, or synthesize a new background texture/,
+  );
+  assert.match(
+    prompt,
+    /Retain the exact existing background surface material and texture/,
+  );
   assert.match(prompt, /authentic wear or flaws/);
 });
 
@@ -412,5 +417,3 @@ test("natural mode prompt covers all clothing categories including bottoms, oute
   assert.match(prompt, /denim, fleece, knitwear/i);
   assert.match(prompt, /legs, thighs, knees/i);
 });
-
-

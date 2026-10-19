@@ -9,7 +9,7 @@ try {
 
 export const api = createServer(
   createApp({
-    apiKey: process.env.VITE_APP_GEMINI_API_KEY,
+    apiKey: process.env.VITE_GEMINI_API_KEY,
     model: process.env.VITE_APP_IMAGE_MODEL || "gemini-nano-banana-2.1",
     imageSize: process.env.VITE_APP_IMAGE_SIZE || "2K",
   }),

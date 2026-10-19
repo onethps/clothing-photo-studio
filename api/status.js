@@ -11,7 +11,7 @@ export default function handler(req, res) {
   res.end(
     JSON.stringify({
       configured: Boolean(
-        process.env.VITE_APP_GEMINI_API_KEY || process.env.GEMINI_API_KEY,
+        process.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY,
       ),
     }),
   );

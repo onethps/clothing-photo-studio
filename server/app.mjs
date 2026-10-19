@@ -104,7 +104,7 @@ export function createApp({
         if (!apiKey)
           throw new RequestError(
             503,
-            "Image editing is not connected. Add VITE_APP_GEMINI_API_KEY to .env and restart the studio.",
+            "Image editing is not connected. Add VITE_GEMINI_API_KEY to .env and restart the studio.",
           );
         if (busy)
           throw new RequestError(
